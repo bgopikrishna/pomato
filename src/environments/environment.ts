@@ -3,7 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  ZOMATO_API_KEY: "141f2f0600ff1ce5ac55411a1f2c16e5"
 };
 
 /*
