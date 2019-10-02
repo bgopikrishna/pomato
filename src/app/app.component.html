@@ -1,1 +1,5 @@
-<app-location-finder></app-location-finder>
+<div class="container text-white mx-auto">
+    <app-navbar></app-navbar>
+    <app-location-finder (locationNameEmitter)="handleLocationName($event)"></app-location-finder>
+    <app-restaurant-list [list]="restaurantLists" [loader]="loader"></app-restaurant-list>
+</div>

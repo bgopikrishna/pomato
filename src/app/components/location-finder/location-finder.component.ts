@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { LocationService } from 'src/app/services/location.service';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
+
 
 @Component({
   selector: 'app-location-finder',
@@ -8,22 +10,33 @@ import { LocationService } from 'src/app/services/location.service';
 })
 export class LocationFinderComponent implements OnInit {
 
+  faSearch = faSearch;
+
+  @Input() searchInput: string;
+  @Output() locationNameEmitter: EventEmitter<any> = new EventEmitter()
+
   constructor(private locationService: LocationService) { }
 
   ngOnInit() {
 
-    this.locationService.getUserLocation("selayiur").subscribe((success) => {
-      if(!success){
-        alert("Location Access Denied")
-      }
-    })
   }
 
 
 
 
-  detectLocation(){
-    this.locationService.getLocationDetails()
+  detectLocation() {
+    // this.locationService.getLocationDetails()
+  }
+
+  handleInput(event: any) {    
+    this.searchInput = event.target.value
+  }
+
+  onSubmit() {
+    if (this.searchInput) {
+      console.log('Emtting Input Value to Parent:',this.searchInput)
+      this.locationNameEmitter.emit(this.searchInput);
+    }
   }
 
 }

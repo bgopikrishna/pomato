@@ -1,0 +1,9 @@
+<div class="grid">
+  <ng-container *ngIf="list.length !== 0">
+    <ng-container *ngFor="let item of list">
+      <app-resturant-card [restaurant]="item.restaurant"></app-resturant-card>
+    </ng-container>
+  </ng-container>
+</div>
+<app-loader *ngIf="loader"></app-loader>
+

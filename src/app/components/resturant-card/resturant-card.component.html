@@ -1,0 +1,37 @@
+<div
+  class="restaurant-card bg-black-500 cursor-pointer text-white rounded-lg flex flex-col justify-between p-4 h-auto border border-transparent hover:border-orange-500"
+>
+  <img
+    [src]="
+      restaurant.featured_image
+        ? restaurant.featured_image
+        : 'https://source.unsplash.com/weekly?food'
+    "
+    alt=""
+    class=" object-cover mb-4 object-cover h-48"
+  />
+  <div
+    class="restaurant-card__content h-100 flex flex-col justify-between flex-auto"
+  >
+    <div class="restaurant-card__header mb-1">
+      <h3 class="text-xl font-bold text-orange-500 capitalize">
+        {{ restaurant.name }}
+      </h3>
+      <p class="text-sm font-light text-gray-500">
+        {{restaurant.cuisines}}
+      </p>
+    </div>
+    <div class="restaurant-card__info text-xs flex mt-2 justify-between">
+      <span
+        ><fa-icon [icon]="faStar" class="text-yellow-500"></fa-icon> 4.3</span
+      >
+      <span>-</span>
+      <span>
+        <fa-icon [icon]="faMapMarkerAlt" class="text-red-600"></fa-icon>
+        Selayiur
+      </span>
+      <span>-</span>
+      <span class="text-green-500">$$$$$$</span>
+    </div>
+  </div>
+</div>

@@ -4,16 +4,19 @@
 
 @tailwind utilities;
 
-@import url('https://rsms.me/inter/inter.css');
+@import url('https://fonts.googleapis.com/css?family=Space+Mono&display=swap');
+
 html {
   font-family: 'Inter', sans-serif;
 }
 @supports (font-variation-settings: normal) {
   html {
-    font-family: 'Inter var', sans-serif;
+    font-family: 'Space Mono', monospace;
   }
 }
 
 body {
-  background: #1A202C;
+  background: #222124;
+  font-family: 'Space Mono', monospace;
+  font-size: 20px;
 }

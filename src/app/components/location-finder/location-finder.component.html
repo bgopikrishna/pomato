@@ -1,4 +1,17 @@
-<form class="flex justify-around align-middle max-w-sm mx-auto my-6">
-    <input type="text" name="location" class="w-full border border-gray-400 focus:border-teal-300 py-2 px-4">
-    <button (click)="detectLocation()" type="submit" class="bg-red-500 hover:bg-red-700 focus:bg-red-700 border text-white border-gray-400 py-2 px-4 rounded">Search</button>
-  </form>
+<form
+  class="flex justify-around align-middle max-w-sm mx-auto my-6 focus:border-orange-500"
+  (ngSubmit)="onSubmit()"
+>
+  <input
+    type="search"
+    name="location"
+    class="w-full bg-white text-black-900 focus:border-white focus:outline-none rounded-l-lg  py-2 px-4"
+    (input)="handleInput($event)"
+  />
+  <button
+    type="submit"
+    class=" border-none bg-white text-black-900 rounded-r-lg outline-none focus:outline-none	py-2 px-4  hover:text-orange-500"
+  >
+    <fa-icon [icon]="faSearch"></fa-icon>
+  </button>
+</form>
