@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { LocationService } from 'src/app/services/location.service';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { faSearchLocation } from '@fortawesome/free-solid-svg-icons';
 
 
 @Component({
@@ -10,7 +10,7 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 })
 export class LocationFinderComponent implements OnInit {
 
-  faSearch = faSearch;
+  faSearchLocation = faSearchLocation;
 
   @Input() searchInput: string;
   @Output() locationNameEmitter: EventEmitter<any> = new EventEmitter()

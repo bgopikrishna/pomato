@@ -1,0 +1,8 @@
+<app-location-finder (locationNameEmitter)="handleLocationName($event)">
+</app-location-finder>
+
+<app-restaurant-list
+  [list]="restaurantLists"
+  [loader]="loader"
+  [listError]="fetchError"
+></app-restaurant-list>

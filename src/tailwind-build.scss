@@ -6,8 +6,59 @@
 
 @import url('https://fonts.googleapis.com/css?family=Space+Mono&display=swap');
 
+:root {
+  --primary: #ed8935;
+  --secondary: #8e99aa;
+  --default: #f6f6f6;
+  --soft-bg: #2c2d33;
+  --normal-bg: #222124;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 0.25rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #ed8936;
+  border-radius: 10px;
+  opacity: 0.7;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  opacity: 1;
+}
+
+//colors
+
+body {
+  --primary: #ed8935;
+  --secondary: #8e99aa;
+  --default: #f6f6f6;
+  --normal-bg: #2c2d33;
+  --soft-bg: #222124;
+  background: var(--soft-bg);
+}
+
+body.theme-dark {
+  --primary: #ed8935;
+  --secondary: #2c2d33;
+  --default: #222124;
+  --soft-bg: #ffffff;
+  --normal-bg: #f6f6f6;
+  background: var(--normal-bg);
+}
+
 html {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Space Mono', monospace;
 }
 @supports (font-variation-settings: normal) {
   html {
@@ -16,7 +67,10 @@ html {
 }
 
 body {
-  background: #222124;
   font-family: 'Space Mono', monospace;
   font-size: 20px;
+}
+
+p {
+  color: var(--secondary);
 }

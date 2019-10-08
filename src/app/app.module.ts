@@ -11,6 +11,10 @@ import { RestaurantListComponent } from './components/restaurant-list/restaurant
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { LoaderComponent } from './components/loader/loader.component';
+import { RestaurantDetailsComponent } from './components/restaurant-details/restaurant-details.component';
+import { HomeComponent } from './components/home/home.component';
+import { GmapComponent } from './components/gmap/gmap.component';
+import { SafePipe } from './pipes/safe.pipe';
 
 
 
@@ -21,7 +25,11 @@ import { LoaderComponent } from './components/loader/loader.component';
     ResturantCardComponent,
     RestaurantListComponent,
     NavbarComponent,
-    LoaderComponent
+    LoaderComponent,
+    RestaurantDetailsComponent,
+    HomeComponent,
+    GmapComponent,
+    SafePipe
   ],
   imports: [
     BrowserModule,
@@ -29,7 +37,8 @@ import { LoaderComponent } from './components/loader/loader.component';
     ReactiveFormsModule,
     HttpClientModule,
     AppRoutingModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    AppRoutingModule
   ],
   providers: [
     {

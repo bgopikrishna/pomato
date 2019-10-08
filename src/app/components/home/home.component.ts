@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { Subject, Subscription } from 'rxjs';
-import { LocationService } from './services/location.service';
+import { Subscription, Subject } from 'rxjs';
+import { LocationService } from 'src/app/services/location.service';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.scss']
 })
-export class AppComponent implements OnInit {
+export class HomeComponent implements OnInit {
+
   private _subscription: Subscription = new Subscription();
   currentLocation: Subject<string> = new Subject();
 
@@ -49,4 +50,5 @@ export class AppComponent implements OnInit {
     this.loader = true;
     this.currentLocation.next(name);
   }
+
 }

@@ -1,37 +1,47 @@
-<div
-  class="restaurant-card bg-black-500 cursor-pointer text-white rounded-lg flex flex-col justify-between p-4 h-auto border border-transparent hover:border-orange-500"
->
-  <img
-    [src]="
-      restaurant.featured_image
-        ? restaurant.featured_image
-        : 'https://source.unsplash.com/weekly?food'
-    "
-    alt=""
-    class=" object-cover mb-4 object-cover h-48"
-  />
+<a [routerLink]="['/restaurant', restaurant.id]">
   <div
-    class="restaurant-card__content h-100 flex flex-col justify-between flex-auto"
+    class="restaurant-card bg-soft-bg border-soft-bg border-2 opacity-75 hover:opacity-100  cursor-pointer text-white rounded-lg flex flex-col justify-between p-4 h-auto border border-transparent hover:border-normal-bg hover:bg-normal-bg"
   >
-    <div class="restaurant-card__header mb-1">
-      <h3 class="text-xl font-bold text-orange-500 capitalize">
-        {{ restaurant.name }}
-      </h3>
-      <p class="text-sm font-light text-gray-500">
-        {{restaurant.cuisines}}
-      </p>
-    </div>
-    <div class="restaurant-card__info text-xs flex mt-2 justify-between">
-      <span
-        ><fa-icon [icon]="faStar" class="text-yellow-500"></fa-icon> 4.3</span
+    <img
+      [src]="
+        restaurant.thumb
+          ? restaurant.thumb
+          : 'https://source.unsplash.com/weekly?food'
+      "
+      [alt]="restaurant.name"
+      class=" object-cover mb-4 object-cover h-48"
+      loading="lazy"
+    />
+    <div
+      class="restaurant-card__content h-100 flex flex-col justify-between flex-auto"
+    >
+      <div class="restaurant-card__header mb-1">
+        <h3 class="text-xl font-bold text-primary capitalize">
+          {{ restaurant.name }}
+        </h3>
+        <p class="text-sm font-light text-secondary">
+          {{ restaurant.cuisines }}
+        </p>
+      </div>
+      <div
+        class="restaurant-card__info text-default text-xs flex mt-2 justify-between"
       >
-      <span>-</span>
-      <span>
-        <fa-icon [icon]="faMapMarkerAlt" class="text-red-600"></fa-icon>
-        Selayiur
-      </span>
-      <span>-</span>
-      <span class="text-green-500">$$$$$$</span>
+        <span
+          ><fa-icon
+            [icon]="faStar"
+            [ngStyle]="{ color: '#' + restaurant.user_rating.rating_color }"
+          ></fa-icon>
+          {{ restaurant.user_rating.aggregate_rating }}</span
+        >
+        <span>-</span>
+        <span>
+          Avg. cost for two is
+          <span class="text-green-500"
+            >{{ restaurant.currency
+            }}{{ restaurant.average_cost_for_two }}</span
+          >
+        </span>
+      </div>
     </div>
   </div>
-</div>
+</a>

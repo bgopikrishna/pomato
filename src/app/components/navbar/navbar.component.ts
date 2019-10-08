@@ -1,18 +1,22 @@
 import { Component, OnInit } from '@angular/core';
-import {faSeedling} from '@fortawesome/free-solid-svg-icons'
+import { faSeedling, faSun, faMoon,faSearch } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.scss']
+  styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent implements OnInit {
+  faSeedling = faSeedling;
+  faSun = faSun;
+  faMoon = faMoon;
+  faSearch= faSearch
 
-  faSeedling = faSeedling
+  constructor() {}
 
-  constructor() { }
+  ngOnInit() {}
 
-  ngOnInit() {
+  handleDarkMode() {
+    document.body.classList.toggle('theme-dark');
   }
-
 }

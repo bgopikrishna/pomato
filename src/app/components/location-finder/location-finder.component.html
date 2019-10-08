@@ -1,17 +1,18 @@
 <form
-  class="flex justify-around align-middle max-w-sm mx-auto my-6 focus:border-orange-500"
+  class="flex justify-around align-middle max-w-sm mx-auto my-6 border-2 rounded-lg border-black-500 focus:border-primary"
   (ngSubmit)="onSubmit()"
 >
   <input
     type="search"
     name="location"
-    class="w-full bg-white text-black-900 focus:border-white focus:outline-none rounded-l-lg  py-2 px-4"
+    class="w-full bg-white text-black-500  focus:border-white focus:outline-none rounded-l-lg  py-2 px-4"
     (input)="handleInput($event)"
+    placeholder="Enter Your Location"
   />
   <button
     type="submit"
-    class=" border-none bg-white text-black-900 rounded-r-lg outline-none focus:outline-none	py-2 px-4  hover:text-orange-500"
+    class=" border-none bg-white text-black-500 rounded-r-lg outline-none focus:outline-none	py-2 px-4  hover:text-primary"
   >
-    <fa-icon [icon]="faSearch"></fa-icon>
+    <fa-icon [icon]="faSearchLocation"></fa-icon>
   </button>
 </form>

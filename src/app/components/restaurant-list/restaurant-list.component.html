@@ -1,9 +1,32 @@
-<div class="grid">
-  <ng-container *ngIf="list.length !== 0">
+<div *ngIf="list.length !== 0">
+  <h2 class="w-100 text-primary text-center text-3xl">
+    Best Rated Restaurants Near You
+  </h2>
+  <div class="grid">
     <ng-container *ngFor="let item of list">
       <app-resturant-card [restaurant]="item.restaurant"></app-resturant-card>
     </ng-container>
-  </ng-container>
+  </div>
 </div>
-<app-loader *ngIf="loader"></app-loader>
+<div class="w-full d-flex flex-col justify-center my-16" *ngIf="loader && !listError">
+  <app-loader></app-loader>
+  <p class="w-full text-center">Finding Best Restaurants Near You</p>
+</div>
+<div
+  class="w-full d-flex flex-col justify-center my-16"
+  *ngIf="list.length === 0 && !loader && !listError"
+>
+  <p class="w-full text-center text-default">
+    Tell us your location to find the best restaurants near you
+  </p>
+</div>
 
+<div class="w-full d-flex flex-col justify-center text-center my-16 text-red-600 capitalize" *ngIf="listError">
+  <p>
+    Oops, We didn't find any restaurants near you.
+  </p>
+  <p>(OR)</p>
+  <p>Your Internet maybe down</p>
+
+  <p class="mt-4">Try Searching Again</p>
+</div>

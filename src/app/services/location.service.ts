@@ -47,15 +47,16 @@ export class LocationService {
 
     if (
       locationResults.status === 'success' &&
-      locationResults.location_suggestions.length !== 0
+      locationResults.location_suggestions.length
     ) {
       const nearestLoaction = locationResults.location_suggestions[0];
       const entityId = nearestLoaction.entity_id;
       const entityType = nearestLoaction.entity_type;
-
       return this.syncService.get(
         `location_details?entity_id=${entityId}&entity_type=${entityType}`
       );
     }
+
+    return of(null)
   }
 }

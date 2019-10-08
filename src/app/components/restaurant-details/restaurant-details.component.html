@@ -1,0 +1,111 @@
+<div
+  class="my-8 p-8  sm:p-8 w-100 border bg-normal-bg flex flex-col border-normal-bg rounded-lg  shadow-2xl"
+>
+  <ng-container *ngIf="!loading && !error && restaurant; else spinner">
+    <div class="flex w-100 lg:flex-row flex-col lg:justify-around">
+      <img
+        [src]="coverImage"
+        alt=""
+        class="cover-image object-cover lg:w-3/4 "
+      />
+      <div
+        class="external-links w-100 flex text-center flex-wrap align-middle lg:justify-around lg:flex-col flex-row lg:my-0 my-4"
+      >
+        <a
+          class="bg-green-600 hover:bg-primary items-center m-1 flex-auto w-full text-grey-darkest  py-2 px-4 rounded flex flex-row justify-around"
+          [href]="getDirectionUrl"
+          target="_blank"
+          *ngIf="getDirectionUrl"
+        >
+          <fa-icon [icon]="faDirections" class="mr-2"></fa-icon>
+          <span>Directions</span>
+        </a>
+        <a
+          class="bg-red-600 bg-yellow-700 hover:bg-primary items-center m-1 flex-auto text-grey-darkest  py-2 px-4 rounded flex flex-row justify-around"
+          [href]="menuUrl"
+          target="_blank"
+          *ngIf="menuUrl"
+        >
+          <fa-icon [icon]="faUtensils" class="mr-2"></fa-icon>
+          <span>Menu</span>
+        </a>
+        <a
+          class="bg-red-600 hover:bg-primary items-center m-1 flex-auto text-grey-darkest  py-2 px-4 rounded flex flex-row justify-around"
+          [href]="orderUrl"
+          target="_blank"
+          *ngIf="orderUrl"
+        >
+          <fa-icon [icon]="faMotorcycle" class="mr-2"></fa-icon>
+          <span>Order</span>
+        </a>
+        <a
+          class="bg-red-600 bg-blue-700 hover:bg-primary items-center m-1 flex-auto text-grey-darkest  py-2 px-4 rounded flex flex-row justify-around"
+          [href]="photosUrl"
+          target="_blank"
+          *ngIf="photosUrl"
+        >
+          <fa-icon [icon]="faImages" class="mr-2"></fa-icon>
+          <span>Photos</span>
+        </a>
+      </div>
+    </div>
+
+    <div
+      class="title_rating w-100 lg:px-8 px-0 my-4 order-first lg:order-none border border-normal-bg rounded-lg mx-4 flex lg:flex-row flex-col bg-normal-bg justify-between items-center"
+    >
+      <div class="restaurant_name flex flex-col">
+        <h3 class="text-2xl font-bold text-primary">{{ restaurant.name }}</h3>
+        <div class="locatility flex flex-row text-xs text-default">
+          <span>{{ restaurant.location.locality }}</span>
+          <span class="mx-4"> &#8284; </span>
+          <span>{{ restaurant.establishment[0] }}</span>
+        </div>
+      </div>
+
+      <div class="flex flex-col items-center">
+        <p [ngClass]="'text-' + ratingColor + '-500'">
+          <fa-icon [icon]="faStar" class="mr-2"></fa-icon>{{ rating }}/5
+        </p>
+        <p class="text-xs opacity-75">988 Reviews</p>
+      </div>
+    </div>
+
+    <div
+      class="other-info text-default w-100 lg:px-8 px-0 border border-normal-bg rounded-lg mx-4 flex lg:flex-row flex-col bg-normal-bg justify-between"
+    >
+      <div class="table-support my-2 text-base">
+        <span>
+          Online Delivery:
+          {{ restaurant.has_online_delivery ? 'Yes' : 'No' }}
+        </span>
+      </div>
+      <div class="table-support my-2 text-base">
+        <span>
+          Table Booking:
+          {{ restaurant.has_table_booking ? 'Yes' : 'No' }}
+        </span>
+      </div>
+      <div class="table-support my-2 text-base">
+        <span>
+          Phone Number(s):
+          {{ restaurant.phone_numbers }}
+        </span>
+      </div>
+    </div>
+
+    <app-gmap
+      *ngIf="restaurant.location.address"
+      [address]="restaurant.name + ' ' + restaurant?.location?.address"
+    ></app-gmap>
+  </ng-container>
+</div>
+
+<ng-template #spinner>
+  <div
+    class="w-full d-flex flex-col justify-center my-16"
+    *ngIf="loading && !error"
+  >
+    <app-loader></app-loader>
+    <p class="w-full text-center">Finding Best Restaurants Near You</p>
+  </div>
+</ng-template>

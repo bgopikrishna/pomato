@@ -1,0 +1,45 @@
+<!-- <div class="mapouter">
+  <div class="gmap_canvas">
+    <iframe
+      width="600"
+      height="450"
+      frameborder="0"
+      style="border:0"
+      src="https://www.google.com/maps/embed/v1/search?q=Kothagudem%2C%20Telangana%2C%20India&key=AIzaSyCjLjUcPmkq5G13-QZ2Ro7ugoDJNbTOVnA"
+      allowfullscreen
+    ></iframe>
+  </div>
+</div> -->
+<div
+  style="overflow:hidden;position: relative;"
+  class="shadow-2xl rounded-lg mt-16 border shadow-inner"
+  *ngIf="address"
+>
+  <iframe
+    width="100%"
+    height="300px"
+    [src]="locationUrl() | safe"
+    frameborder="0"
+    scrolling="no"
+    marginheight="0"
+    marginwidth="0"
+  ></iframe>
+  <div
+    style="position: absolute;width: 80%;bottom: 10px;left: 0;right: 0;margin-left: auto;margin-right: auto;color: #000;text-align: center;"
+  >
+    <small style="line-height: 1.8;font-size: 2px;background: #fff;"
+      >Powered by
+      <a href="https://embedgooglemaps.com/fr/">Embedgooglemaps.com/fr/</a> &
+      <a href="http://lasvegasstatistics.embedgooglemaps.com"
+        >lasvegasstatistics</a
+      ></small
+    >
+  </div>
+  <style>
+    #gmap_canvas img {
+      max-width: none !important;
+      background: none !important;
+    }
+  </style>
+</div>
+<br />

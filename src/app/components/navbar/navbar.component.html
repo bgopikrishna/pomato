@@ -1,8 +1,8 @@
-<nav class="relative select-none bg-grey lg:flex lg:items-stretch w-full p-2">
+<nav class="relative select-none bg-normal-bg flex justify-between w-full p-2">
   <div class="flex flex-no-shrink items-stretch h-12">
     <a
-      href="#"
-      class="flex-no-grow flex-no-shrink relative py-2 px-4 leading-normal text-4xl text-orange-700 no-underline flex items-center hover:text-orange-500"
+      routerLink=""
+      class="flex-no-grow flex-no-shrink relative py-2 px-4 leading-normal text-4xl text-orange-700 no-underline flex items-center hover:text-primary"
       ><fa-icon [icon]="faSeedling" size="sm" class="mr-2"></fa-icon>  Pomato</a
     >
     <!-- <button class="block lg:hidden cursor-pointer ml-auto relative w-12 h-12 p-4">
@@ -11,13 +11,15 @@
           </button> -->
   </div>
   <div class="lg:flex lg:items-stretch lg:flex-no-shrink lg:flex-grow">
-    <div class="lg:flex lg:items-stretch lg:justify-end ml-auto">
+    <div class="flex lg:items-stretch lg:justify-end ml-auto">
       <a
-        href="#"
-        class="flex-no-grow flex-no-shrink relative py-2 px-4 leading-normal text-white no-underline flex items-center hover:bg-grey-dark"
-        >Account</a
+        routerLink="search"
+        class="flex-no-grow flex-no-shrink relative py-2 px-4 leading-normal text-default no-underline flex items-center hover:text-secondary"
+        ><fa-icon [icon]="faSearch"></fa-icon></a
       >
-      <!-- <a href="#" class="flex-no-grow flex-no-shrink relative py-2 px-4 leading-normal text-white no-underline flex items-center hover:bg-grey-dark">Item 2</a> -->
+      <a (click)="handleDarkMode()" role="button" class="flex-no-grow flex-no-shrink relative py-2 px-4 leading-normal text-white no-underline flex items-center hover:bg-grey-dark">
+        <fa-icon [icon]="faSun" class="text-yellow-500"></fa-icon>
+      </a>
     </div>
   </div>
 </nav>
