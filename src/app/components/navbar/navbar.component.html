@@ -1,4 +1,6 @@
-<nav class="relative select-none bg-normal-bg flex justify-between w-full p-2 rounded-b-lg">
+<nav
+  class="relative select-none bg-normal-bg flex justify-between w-full p-2 rounded-b-lg"
+>
   <div class="flex flex-no-shrink items-stretch h-12 header">
     <a
       routerLink=""
@@ -24,7 +26,16 @@
         role="button"
         class="flex-no-grow flex-no-shrink relative py-2 px-4 leading-normal text-white no-underline flex items-center hover:bg-grey-dark"
       >
-        <fa-icon [icon]="faSun" class="text-yellow-500"></fa-icon>
+        <fa-icon
+          *ngIf="darkMode"
+          [icon]="faSun"
+          class="text-yellow-500"
+        ></fa-icon>
+        <fa-icon
+          *ngIf="!darkMode"
+          [icon]="faMoon"
+          class="text-gray-600"
+        ></fa-icon>
       </a>
     </div>
   </div>

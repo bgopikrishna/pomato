@@ -5,11 +5,11 @@ import { HomeComponent } from './components/home/home.component';
 import { RestaurantDetailsComponent } from './components/restaurant-details/restaurant-details.component';
 
 const appRoutes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'home', component: HomeComponent },
+  { path: '', pathMatch: 'full', redirectTo: '/search' },
+  { path: 'home', redirectTo: '/search' },
   { path: 'search', component: HomeComponent },
   { path: 'restaurant/:id', component: RestaurantDetailsComponent },
-  { path: '**', redirectTo:""},
+  { path: '**', redirectTo: '' },
 ];
 
 @NgModule({
