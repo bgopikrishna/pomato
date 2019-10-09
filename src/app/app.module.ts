@@ -15,6 +15,7 @@ import { RestaurantDetailsComponent } from './components/restaurant-details/rest
 import { HomeComponent } from './components/home/home.component';
 import { GmapComponent } from './components/gmap/gmap.component';
 import { SafePipe } from './pipes/safe.pipe';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 
@@ -29,7 +30,8 @@ import { SafePipe } from './pipes/safe.pipe';
     RestaurantDetailsComponent,
     HomeComponent,
     GmapComponent,
-    SafePipe
+    SafePipe,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

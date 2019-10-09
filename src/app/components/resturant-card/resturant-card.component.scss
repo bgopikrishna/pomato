@@ -10,6 +10,10 @@
 
   }
 
+  &:last-child {
+    margin-bottom: 2rem;
+  }
+
   & > * {
     transition: border 0.3s ease-in-out;
   }
@@ -27,8 +31,3 @@
   }
 }
 
-@media (max-width: 900px) {
-  .restaurant-card {
-    min-width: 100%;
-  }
-}

@@ -11008,7 +11008,7 @@ video {
   z-index: auto;
 }
 
-@import url('https://fonts.googleapis.com/css?family=Pacifico|Quicksand:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Pacifico|Maven+Pro:400,700&display=swap');
 
 :root {
   --primary: #ed8935;
@@ -11047,7 +11047,7 @@ video {
 
 //colors
 
-body {
+body.theme-dark {
   --primary: #ed8935;
   --secondary: #8e99aa;
   --default: #f6f6f6;
@@ -11056,7 +11056,7 @@ body {
   background: var(--soft-bg);
 }
 
-body.theme-dark {
+body.theme-light {
   --primary: #ed8935;
   --secondary: #2c2d33;
   --default: #222124;
@@ -11066,22 +11066,33 @@ body.theme-dark {
 }
 
 html {
-  font-family: 'Quicksand', sans-serif;
+  font-family: 'Maven Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 @supports (font-variation-settings: normal) {
   html {
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Maven Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+      Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
+      sans-serif;
   }
 }
 
 body {
-  font-family: 'Quicksand', sans-serif;
+  font-family: 'Maven Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-size: 20px;
 }
 
 p {
   color: var(--secondary);
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Pacifico', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 @media (min-width: 640px) {
