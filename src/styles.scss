@@ -11008,7 +11008,7 @@ video {
   z-index: auto;
 }
 
-@import url('https://fonts.googleapis.com/css?family=Space+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Pacifico|Quicksand:400,700&display=swap');
 
 :root {
   --primary: #ed8935;
@@ -11066,17 +11066,17 @@ body.theme-dark {
 }
 
 html {
-  font-family: 'Space Mono', monospace;
+  font-family: 'Quicksand', sans-serif;
 }
 
 @supports (font-variation-settings: normal) {
   html {
-    font-family: 'Space Mono', monospace;
+    font-family: 'Quicksand', sans-serif;
   }
 }
 
 body {
-  font-family: 'Space Mono', monospace;
+  font-family: 'Quicksand', sans-serif;
   font-size: 20px;
 }
 
