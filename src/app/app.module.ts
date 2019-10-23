@@ -6,41 +6,34 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpTokenInterceptor } from './helpers/HtppInterceptor';
 import { LocationFinderComponent } from './components/location-finder/location-finder.component';
-import { ResturantCardComponent } from './components/resturant-card/resturant-card.component';
-import { RestaurantListComponent } from './components/restaurant-list/restaurant-list.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { LoaderComponent } from './components/loader/loader.component';
-import { RestaurantDetailsComponent } from './components/restaurant-details/restaurant-details.component';
 import { HomeComponent } from './components/home/home.component';
-import { GmapComponent } from './components/gmap/gmap.component';
-import { SafePipe } from './pipes/safe.pipe';
 import { FooterComponent } from './components/footer/footer.component';
-
-
+import { RestraurantModule } from './restraurant/restraurant.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     LocationFinderComponent,
-    ResturantCardComponent,
-    RestaurantListComponent,
+
     NavbarComponent,
-    LoaderComponent,
-    RestaurantDetailsComponent,
+
     HomeComponent,
-    GmapComponent,
-    SafePipe,
-    FooterComponent
+
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    AppRoutingModule,
+    SharedModule,
     FontAwesomeModule,
-    AppRoutingModule
+    SharedModule,
+    RestraurantModule,
+    AppRoutingModule,
   ],
   providers: [
     {
@@ -49,6 +42,6 @@ import { FooterComponent } from './components/footer/footer.component';
       multi: true,
     },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

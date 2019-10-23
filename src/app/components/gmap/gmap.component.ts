@@ -12,12 +12,13 @@ export class GmapComponent implements OnInit {
   private _address: string;
 
   @Input()
-  public get address(): string {
-    return this._address;
-  }
-  public set address(value: string) {
+  set address(value: string) {
     this._address = this.src + value;
   }
+   get address(): string {
+    return this._address;
+  }
+  
 
   constructor(public sanitizer: DomSanitizer) {}
 
