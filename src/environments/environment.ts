@@ -4,8 +4,7 @@
 
 export const environment = {
   production: false,
-  ZOMATO_API_KEY: "141f2f0600ff1ce5ac55411a1f2c16e5",
-  MAPS_KEY:"AIzaSyCjLjUcPmkq5G13-QZ2Ro7ugoDJNbTOVnA"
+  ZOMATO_API_KEY: "cb1d1cfb2b169f1bd6dbae4d52a55d46",
 };
 
 /*
