@@ -42,6 +42,7 @@ export class HomeComponent implements OnInit {
       err => {
         console.log(err);
         this.fetchError = true;
+        this.loader = false
       }
     );
   }
